@@ -9,10 +9,61 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Navbar 2026 Style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+    background-color: #8B5CF6;
+    color: white;
+}
+
+.highlight-text {
+    display: inline-block;
+    background: linear-gradient(120deg, #FFD700 0%, #FFD700 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-position: 0 88%;
+    transition: background-size 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 0 4px;
+}
+
+#typewriter::after {
+    content: '|';
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+    color: #333;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.highlight-text:hover,
+.highlight-text.visible {
+    background-size: 100% 40%;
+}
+
 header {
     position: fixed;
     top: 20px;
@@ -24,7 +75,6 @@ header {
 }
 
 .header-container {
-    /* Dark Floating Pill */
     background: rgba(30, 30, 30, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -37,7 +87,6 @@ header {
     align-items: center;
 }
 
-/* Ensure nav doesn't have conflicting styles */
 nav {
     padding: 0;
     margin: 0;
@@ -60,7 +109,6 @@ nav {
 .menu li a {
     text-decoration: none;
     color: #a1a1aa;
-    /* Light gray text */
     font-size: 14px;
     font-weight: 500;
     padding: 10px 24px;
@@ -70,41 +118,28 @@ nav {
     letter-spacing: 0.3px;
 }
 
-/* Hover State */
 .menu li a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Active State (Matches Screenshot: Grey bg, Yellow text) */
 .menu li a.active {
     background: #404040;
-    /* Lighter grey active bg */
     color: #FFD700;
-    /* Gold/Yellow text */
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Scrolled State adjustments if needed, 
-   but floating pill usually stays the same. 
-   We can make it slightly more opaque on scroll if desired. */
 header.header--scrolled .header-container {
     background: rgba(30, 30, 30, 0.95);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Hide the old specific selectors to avoid conflicts */
 header .header-container nav,
 header.header--scrolled .header-container nav,
 header.header--scrolled .menu li a {
     background: none;
     box-shadow: none;
-}
-
-/* Main and Sections */
-main {
-    margin-top: 80px;
 }
 
 .section {
@@ -128,7 +163,6 @@ main {
     color: #666;
 }
 
-/* Different background colors for each section */
 #home {
     background-color: #f8f9fa;
 }
@@ -145,7 +179,6 @@ main {
     background-color: #ced4da;
 }
 
-/* Home Section Specific Styles */
 .home-container {
     display: flex;
     align-items: center;
@@ -237,7 +270,6 @@ main {
     align-items: center;
 }
 
-/* Skills Section - card style to match Experience */
 .skills-heading {
     text-align: center;
     margin-bottom: 40px !important;
@@ -347,7 +379,6 @@ main {
     margin: 0px 6rem !important;
 }
 
-/* Experience Section */
 .experience-heading {
     text-align: center;
     margin-bottom: 40px !important;
@@ -374,7 +405,6 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Education Section */
 .education-heading {
     text-align: center;
     margin-bottom: 40px !important;
@@ -525,7 +555,6 @@ main {
     font-size: 20px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .home-container {
         flex-direction: column;
@@ -545,7 +574,6 @@ main {
     }
 }
 
-/* Resume Paper Styles */
 .resume-paper {
     background: white;
     padding: 60px;
@@ -567,7 +595,6 @@ main {
 .resume-name {
     font-size: 38px;
     font-weight: 800;
-    /* Bold */
     letter-spacing: 2px;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -677,7 +704,6 @@ main {
     margin-top: 15px !important;
 }
 
-/* Response for small screens */
 @media (max-width: 768px) {
     .resume-paper {
         padding: 30px;
@@ -693,7 +719,6 @@ main {
     }
 }
 
-/* Resume Download Button */
 .resume-title-group {
     display: flex;
     align-items: center;
@@ -740,11 +765,9 @@ main {
     transform: scale(1.1);
 }
 
-/* Projects Section */
 #projects {
     background-color: #f3f4f6;
     overflow: hidden;
-    /* Prevent horizontal scroll on body */
 }
 
 .projects-scroll-wrapper {
@@ -752,22 +775,16 @@ main {
     position: relative;
 }
 
-/* Horizontal Scroll Container */
 .projects-scroll-container {
     display: flex;
     overflow-x: auto;
-    /* Enable horizontal scrolling */
     gap: 30px;
     padding: 20px 5px 40px 5px;
-    /* Bottom padding for hover effect/shadow */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    /* Smooth scroll on iOS */
     scrollbar-width: thin;
-    /* Firefox */
 }
 
-/* Hide default scrollbar but keep functionality */
 .projects-scroll-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -786,10 +803,8 @@ main {
     background: #94a3b8;
 }
 
-/* Project Card */
 .project-card {
     flex: 0 0 350px;
-    /* Fixed width, won't shrink */
     background: white;
     border-radius: 16px;
     padding: 30px;
@@ -798,15 +813,11 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-/* Hover Effect: Highlight */
 .project-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 30px rgba(139, 92, 246, 0.15);
-    /* Purple glow */
-    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-card-header {
@@ -820,35 +831,44 @@ main {
     width: 50px;
     height: 50px;
     background: #8B5CF6;
-    /* Default Purple */
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+}
+
+.project-initial {
     color: white;
-    font-weight: bold;
     font-size: 24px;
-    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+    font-weight: bold;
 }
 
 .project-card h2 {
-    font-size: 22px;
+    font-size: 20px;
     color: #1f2937;
     margin: 0;
 }
 
-.project-card-body p {
-    font-size: 15px;
-    color: #6b7280;
-    /* Gray 500 */
+.project-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card p {
+    color: #4b5563;
+    font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 25px;
+    margin: 0;
 }
 
 .project-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    margin-top: auto;
 }
 
 .project-tech-stack span {
@@ -858,15 +878,15 @@ main {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .project-card {
-        flex: 0 0 280px;
-        /* Slightly smaller on mobile */
-    }
+.project-card:hover .project-tech-stack span {
+    background: #8B5CF6;
+    color: white;
+    transform: translateY(-2px);
 }
+
 
 /* Contact Section (Optimized) */
 .contact-section {
@@ -896,113 +916,132 @@ main {
     backdrop-filter: blur(3px);
 }
 
-/* Wave Divider */
+/* Wave */
 .custom-shape-divider-top {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    overflow: hidden;
     line-height: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .custom-shape-divider-top svg {
+    position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 100px;
+    height: 80px;
 }
 
 .custom-shape-divider-top .shape-fill {
     fill: #f3f4f6;
+    /* Should match Projects section background */
 }
 
 /* Content */
 .contact-container {
     position: relative;
     z-index: 2;
+    text-align: center;
+    color: white;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-heading {
-    text-align: center;
-    font-size: 3.5rem;
-    margin-bottom: 3rem;
-    font-weight: 800;
-    background: linear-gradient(to right, #fff, #a78bfa);
+    font-size: 2.5rem;
+    margin-bottom: 50px !important;
+    background: linear-gradient(to right, #fff, #9ca3af);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .contact-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 30px;
+    padding: 0 20px;
 }
 
+/* Contact Item */
 .contact-item {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 16px;
+    padding: 25px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 20px;
+    transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(139, 92, 246, 0.5);
+    border-color: rgba(139, 92, 246, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .contact-icon {
-    width: 48px;
-    height: 48px;
-    background: white;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    background: #8B5CF6;
+    /* Solid background circle */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    transition: transform 0.3s ease;
 }
 
+/* Updated Icon Image Styles */
 .contact-icon img {
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Makes black icons white */
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.contact-info {
+    text-align: left;
 }
 
 .contact-info h3 {
-    font-size: 12px;
+    font-size: 14px;
+    color: #9ca3af;
     text-transform: uppercase;
-    color: #a78bfa;
-    margin-bottom: 4px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .contact-info p,
 .contact-info a {
     font-size: 16px;
     color: white;
-    margin: 0;
-    text-decoration: none;
     font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-all;
 }
 
 .contact-info a:hover {
-    color: #ffd700;
+    color: #8B5CF6;
 }
 
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .contact-heading {
-        font-size: 2.5rem;
-    }
-
     .contact-details-grid {
         grid-template-columns: 1fr;
     }
