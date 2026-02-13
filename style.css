@@ -213,8 +213,6 @@ header.header--scrolled .menu li a {
 .home-right img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .f38 {
@@ -642,7 +640,7 @@ header.header--scrolled .menu li a {
 
 .resume-links a {
     color: #0056b3;
-    text-decoration: underline;
+    text-decoration: none !important;
     margin-left: 5px;
 }
 
