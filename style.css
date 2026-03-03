@@ -1003,8 +1003,6 @@ header.header--scrolled .menu li a {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    /* Makes black icons white */
 }
 
 .contact-item:hover .contact-icon {
