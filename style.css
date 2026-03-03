@@ -1041,4 +1041,20 @@ header.header--scrolled .menu li a {
     .contact-details-grid {
         grid-template-columns: 1fr;
     }
+
+    .menu li a {
+        padding: 7px 7px !important;
+    }
+
+    .home-left,
+    .home-right {
+        flex: 0;
+    }
+
+    #about .mlr-6,
+    #resume .mlr-6,
+    #projects .mlr-6 {
+        margin: 0 !important;
+    }
+
 }
